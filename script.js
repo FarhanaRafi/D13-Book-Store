@@ -69,7 +69,7 @@ function deleteRow(event) {
 }
 
 function deleteTable() {
-  var Parent = document.getElementById("my-table");
+  var Parent = document.getElementById("t-body");
   while (Parent.hasChildNodes()) {
     Parent.removeChild(Parent.firstChild);
   }
