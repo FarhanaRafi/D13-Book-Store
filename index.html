@@ -14,18 +14,27 @@
 
 <body>
 
-    <div>
-        <button type="button" id="cart-btn" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#exampleModal">
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">Book Store</a>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2"  id="search-input" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-btn">Search</button>
+          <button type="button" id="cart-btn" class="btn btn-secondary btn-lg ml-3" data-toggle="modal" data-target="#exampleModal">
             <i class="bi bi-cart3"></i> Cart
         </button>
+        </form>
+      </nav>
+
+    <!-- <div>
+       
 
 <div class="input-group mb-3 mt-3">
-    <input type="text" id="search-input" class="form-control" placeholder="Search Books" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <input type="text" class="form-control" placeholder="Search Books" aria-label="Recipient's username" aria-describedby="button-addon2">
     <div class="input-group-append">
       <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
     </div>
   </div>
-    </div>
+    </div> -->
 
 
 
@@ -34,26 +43,28 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Added to Cart</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Shopping Cart <span id="count"></span></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-            <table class="table">
+            <table class="table" id="my-table">
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Price</th>
+                    <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                  
                 </tbody>
-              </table>
+            </table>
         </div>
         <div class="modal-footer">
+            <button type="button" class="btn btn-danger" onclick="deleteTable()">Clear</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save changes</button>
         </div>
