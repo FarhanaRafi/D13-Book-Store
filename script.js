@@ -10,18 +10,17 @@ const getBooks = async () => {
     let container = document.querySelector("#book-row");
     let bookItem = books.map((book) => {
       return `
-      <div class= "col-3 mb-2"> 
-      <div class="card">
-      <img src="${book.img}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">${book.title}</h5>
-        <p >$ ${book.price}</p>
-        
-        <button id=${book.asin} onclick = "addBookToCart(event)" type="button" class="btn btn-outline-primary"><i class="bi bi-cart3"></i></button>
-        <button onclick = "removeBookFromPage(event)"  type="button" class="btn btn-outline-primary">Skip</button>
+      <div class="col-3 mb-4">
+      <div class="card h-100">
+        <img src="${book.img}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${book.title}</h5>
+          <p class="card-text">$ ${book.price}</p>
+          <button id=${book.asin} onclick = "addBookToCart(event)" type="button" class="btn btn-outline-primary"><i class="bi bi-cart3"></i></button>
+          <button onclick = "removeBookFromPage(event)"  type="button" class="btn btn-outline-primary">Skip</button>
+        </div>
       </div>
-      </div>
-    </div>`;
+      </div>`;
     });
 
     const stringOfBooks = bookItem.join("");
@@ -104,17 +103,16 @@ function searchBooks() {
     console.log(filtered);
     let bookItem = filtered.map((book) => {
       return `
-        <div class= "col-3 mb-2">
-        <div class="card">
+      <div class="col-3 mb-4">
+      <div class="card h-100">
         <img src="${book.img}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">${book.title}</h5>
-          <p>$ ${book.price}</p>
-
+          <p class="card-text">$ ${book.price}</p>
           <button id=${book.asin} onclick = "addBookToCart(event)" type="button" class="btn btn-outline-primary"><i class="bi bi-cart3"></i></button>
           <button onclick = "removeBookFromPage(event)"  type="button" class="btn btn-outline-primary">Skip</button>
         </div>
-        </div>
+      </div>
       </div>`;
     });
     const stringOfBooks = bookItem.join("");
